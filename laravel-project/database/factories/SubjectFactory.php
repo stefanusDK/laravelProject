@@ -1,0 +1,24 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Subject;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends Factory<Subject>
+ */
+class SubjectFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => $this->faker->unique()->randomElement(['Matematika', 'Bahasa Indonesia', 'Bahasa Inggris', 'Fisika', 'Kimia', 'Biologi', 'Sejarah', 'Ekonomi', 'Geografi', 'Seni Budaya']),
+        ];
+    }
+}

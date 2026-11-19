@@ -1,0 +1,9 @@
+<x-admin.layout>
+    <x-admin.about
+        :title="$title"
+        :subtitle="$subtitle"
+        :greeting="$greeting"
+        :description="$description"
+        :profile="$profile"
+    />
+</x-admin.layout>
