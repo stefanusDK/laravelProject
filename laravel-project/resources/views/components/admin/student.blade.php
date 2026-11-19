@@ -60,6 +60,5 @@
         </table>
     </div>
 
-    {{-- Modal form tambah siswa (resources/views/admin/student/create.blade.php) --}}
     @include('admin.student.create')
 </div>

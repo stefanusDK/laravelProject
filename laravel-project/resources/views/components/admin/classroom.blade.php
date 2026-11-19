@@ -31,9 +31,11 @@
                         <td class="px-4 py-3">{{ $loop->iteration }}</td>
                         <td class="px-4 py-3">{{ $classroom->name }}</td>
                         <td class="px-4 py-3 font-medium text-gray-900 dark:text-white">
-                            @foreach ($classroom->students as $student)
+                            @forelse ($classroom->students as $student)
                                 {{ $student->name }}<br>
-                            @endforeach
+                            @empty
+                                -
+                            @endforelse
                         </td>
                         <td class="px-4 py-3">{{ $classroom->major }}</td>
                     </tr>
@@ -46,6 +48,5 @@
         </table>
     </div>
 
-    {{-- Modal form tambah kelas (resources/views/admin/classroom/create.blade.php) --}}
     @include('admin.classroom.create')
 </div>

@@ -51,6 +51,5 @@
         </table>
     </div>
 
-    {{-- Modal form tambah guru (resources/views/admin/teacher/create.blade.php) --}}
     @include('admin.teacher.create')
 </div>

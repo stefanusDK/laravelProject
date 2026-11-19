@@ -20,7 +20,6 @@ class StudentController extends Controller
 
     public function create()
     {
-        // Form tambah dibuka lewat modal di halaman index, jadi method ini tidak dipakai.
         return view('admin.student.create', ['classrooms' => Classroom::all()]);
     }
 

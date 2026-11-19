@@ -1,11 +1,8 @@
-{{-- Modal Form Tambah Mapel (Flowbite) --}}
-{{-- Dibuka lewat tombol "+ Tambah Mapel" yang punya data-modal-target="tambah-mapel-modal" --}}
 <div id="tambah-mapel-modal" tabindex="-1" aria-hidden="true"
     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-lg max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 
-            {{-- Header modal --}}
             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Tambah Data Mata Pelajaran</h3>
                 <button type="button" data-modal-hide="tambah-mapel-modal"
@@ -17,7 +14,6 @@
                 </button>
             </div>
 
-            {{-- Form input --}}
             <form action="{{ route('subjects.store') }}" method="POST" class="p-4 md:p-5">
                 @csrf
 
@@ -53,7 +49,6 @@
     </div>
 </div>
 
-{{-- Buka kembali modal otomatis kalau validasi gagal, supaya pesan error terlihat --}}
 @if ($errors->any())
     <script>
         document.addEventListener('DOMContentLoaded', function () {

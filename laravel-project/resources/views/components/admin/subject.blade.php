@@ -47,6 +47,5 @@
         </table>
     </div>
 
-    {{-- Modal form tambah mapel (resources/views/admin/subject/create.blade.php) --}}
     @include('admin.subject.create')
 </div>

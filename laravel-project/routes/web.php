@@ -27,7 +27,6 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('adm
 Route::get('/admin/about', [AboutController::class, 'index'])->name('admin.about');
 Route::get('/admin/student', [StudentController::class, 'index'])->name('admin.student');
 
-// Route logika tambah/edit/hapus siswa — aktifkan saat diminta:
 Route::post('/admin/student', [StudentController::class, 'store'])->name('admin.student.store');
 Route::get('/admin/student/{id}/edit', [StudentController::class, 'edit'])->name('admin.student.edit');
 Route::put('/admin/student/{id}', [StudentController::class, 'update'])->name('admin.student.update');

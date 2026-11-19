@@ -11,7 +11,6 @@ class Subject extends Model
 
     protected $guarded = ['id'];
 
-    // Setiap mapel diajar 1 guru (atau bisa hasMany tergantung kasus, di soal tertulis belongsTo/hasOne)
     public function teacher()
     {
         return $this->hasOne(Teacher::class);

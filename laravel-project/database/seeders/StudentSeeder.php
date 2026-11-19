@@ -10,8 +10,8 @@ class StudentSeeder extends Seeder
 {
     public function run(): void
     {
-        Student::factory(15)->create([
-            'classroom_id' => fn () => Classroom::inRandomOrder()->value('id'),
-        ]);
+        foreach (Classroom::all() as $classroom) {
+            Student::factory(3)->create(['classroom_id' => $classroom->id]);
+        }
     }
 }

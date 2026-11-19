@@ -11,7 +11,6 @@ class Teacher extends Model
 
     protected $guarded = ['id'];
 
-    // Setiap Guru mengajar 1 mapel
     public function subject()
     {
         return $this->belongsTo(Subject::class);
