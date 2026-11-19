@@ -10,10 +10,24 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects = Subject::with('teacher')->get();
+
         return view('admin.subject.index', [
             'title' => 'Data Subjects',
             'subtitle' => 'Daftar mata pelajaran',
-            'subjects' => $subjects
+            'subjects' => $subjects,
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255|unique:subjects,name',
+        ]);
+
+        Subject::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect('/subjects')->with('success', 'Data mata pelajaran berhasil ditambahkan.');
     }
 }

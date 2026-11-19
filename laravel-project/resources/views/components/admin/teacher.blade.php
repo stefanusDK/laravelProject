@@ -4,10 +4,16 @@
             <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $title }}</h1>
             <p class="text-sm text-gray-500 dark:text-gray-400">{{ $subtitle }}</p>
         </div>
-        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2.5">
+        <a href="#" data-modal-target="tambah-guru-modal" data-modal-toggle="tambah-guru-modal" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2.5">
             + Tambah Guru
         </a>
     </div>
+
+    @if (session('success'))
+        <div class="mb-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <div class="relative overflow-x-auto bg-white dark:bg-gray-800 shadow-md rounded-lg">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -44,4 +50,7 @@
             </tbody>
         </table>
     </div>
+
+    {{-- Modal form tambah guru (resources/views/admin/teacher/create.blade.php) --}}
+    @include('admin.teacher.create')
 </div>

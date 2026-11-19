@@ -36,5 +36,8 @@ Route::delete('/admin/student/{id}', [StudentController::class, 'destroy'])->nam
 
 
 Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
+Route::post('/teachers', [TeacherController::class, 'store'])->name('teachers.store');
 Route::get('/subjects', [SubjectController::class, 'index'])->name('subjects.index');
-Route::get('/admin/classroom', [ClassroomController::class, 'index']);
+Route::post('/subjects', [SubjectController::class, 'store'])->name('subjects.store');
+Route::get('/admin/classroom', [ClassroomController::class, 'index'])->name('admin.classroom');
+Route::post('/admin/classroom', [ClassroomController::class, 'store'])->name('admin.classroom.store');
